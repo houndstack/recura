@@ -1,0 +1,6 @@
+
+{% block content %}
+        <h1>{% block title %} 500 Internal Server Error {% endblock %}</h1>
+        <p>OOOOPS! Something went wrong on the server.</p>
+        <a href={{ url_for('anime_list_form') }}>Go Home</a>
+{% endblock %}

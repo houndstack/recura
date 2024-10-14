@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AniList Anime List</title>
+</head>
+<script src="/static/script.js"></script>
+<body>
+    <h1>List</h1>
+    <form name="form1" onSubmit="actionOnSubmit()" method="POST" action="user_list">
+        <label for="username">AniList Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="list_type">Recommendation Type:</label>
+        <select id="list_type" name="list_type">
+            <option value="user">User</option>
+            <option value="anime">Anime</option>
+        </select>
+      <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>

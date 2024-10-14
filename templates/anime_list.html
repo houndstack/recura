@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AniList Anime List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize the tablesorter plugin on the anime table
+            $('#anime-table').DataTable({
+              scroller: true
+            });
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.2/sc-2.1.0/sb-1.4.0/sp-2.1.1/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/style.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.2/sc-2.1.0/sb-1.4.0/sp-2.1.1/datatables.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/LeeWannacott/table-sort-js/master/npm/table-sort.js"></script>
+    <style>
+        th {
+            cursor: pointer;
+        }
+        th:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>List</h1>
+    <p>Showing recommended anime for {{ username }}</p>
+    <a href={{ url_for('anime_list_form') }}>Home</a>
+    <table id="anime-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Recommendation Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for anime in recommendations %}
+            <tr>
+                <td><a href={{ url_for('anime_list', type='anime', anime=anime[0]) }}>{{ anime[0] }}</a></td>
+                <td>{{ anime[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+

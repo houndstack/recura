@@ -1,0 +1,5 @@
+{% block content %}
+        <h1>{% block title %} 404 Not Found. {% endblock %}</h1>
+        <p>OOPS! Sammy couldn't find your page; looks like it doesn't exist.</p>
+        <a href={{ url_for('anime_list_form') }}>Go Home</a>
+{% endblock %}
